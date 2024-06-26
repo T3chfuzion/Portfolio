@@ -7,12 +7,14 @@
 
 body {
     line-height: 1.6;
-    background: #f8f2eb;
+    background: #c4c1be;
 }
 
 header {
-    background: #6497d6;
-    color: #6497d6;
+    background: #BE93C5;
+    background: -webkit-linear-gradient(to right, #7BC6CC, #BE93C5);  
+    background: linear-gradient(to right, #7BC6CC, #BE93C5); 
+    color: #fff;
 }
 
 nav h1 {
@@ -37,7 +39,10 @@ nav ul li a {
 }
 
 #hero {
-    background: #6497d6;
+    background: #BE93C5;
+    background: -webkit-linear-gradient(to right, #7BC6CC, #BE93C5);  
+    background: linear-gradient(to right, #7BC6CC, #BE93C5); 
+
     color: #fff;
     padding: 100px 20px;
     text-align: center;
@@ -81,7 +86,9 @@ section {
 
 #contact-form button {
     padding: 10px;
-    background: #6497d6;
+    background: #BE93C5;
+    background: -webkit-linear-gradient(to right, #7BC6CC, #BE93C5);  
+    background: linear-gradient(to right, #7BC6CC, #BE93C5); 
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -89,7 +96,9 @@ section {
 }
 
 footer {
-    background: #6497d6;
+    background: #BE93C5;
+    background: -webkit-linear-gradient(to right, #7BC6CC, #BE93C5);  
+    background: linear-gradient(to right, #7BC6CC, #BE93C5); 
     color: #fff;
     text-align: center;
     padding: 10px 0;
