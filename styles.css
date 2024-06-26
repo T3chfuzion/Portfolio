@@ -44,6 +44,13 @@ nav ul li a {
     text-align: center;
 }
 
+#hero img {
+    height: 250px;
+    border-radius: 50%;
+    margin-bottom: 50px;
+    filter: drop-shadow(0 0 0.75rem #2b077f)
+}
+
 section {
     padding: 20px;
     margin: 20px 0;
