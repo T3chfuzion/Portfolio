@@ -7,12 +7,12 @@
 
 body {
     line-height: 1.6;
-    background: #c3d1d2;
+    background: #d7ae467e;
 }
 
 header {
     background: #BE93C5;  
-    background: linear-gradient(to right, #7BC6CC, #BE93C5); 
+    background: linear-gradient(to right, #ffa17f, #00223e); 
     color: #fff;
 }
 
@@ -39,7 +39,7 @@ nav ul li a {
 
 #hero {
     background: #BE93C5;  
-    background: linear-gradient(to right, #7BC6CC, #BE93C5); 
+    background: linear-gradient(to right, #ffa17f, #00223e); 
     color: #fff;
     padding: 100px 20px;
     text-align: center;
@@ -85,7 +85,7 @@ section {
     padding: 10px;
     background: #BE93C5;
     background: -webkit-linear-gradient(to right, #7BC6CC, #BE93C5);  
-    background: linear-gradient(to right, #7BC6CC, #BE93C5); 
+    background: linear-gradient(to right, #ffa17f, #00223e); 
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -94,7 +94,7 @@ section {
 
 footer {
     background: #BE93C5; 
-    background: linear-gradient(to right, #7BC6CC, #BE93C5); 
+    background: linear-gradient(to right, #ffa17f, #00223e); 
     color: #fff;
     text-align: center;
     padding: 10px 0;
