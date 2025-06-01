@@ -3,155 +3,584 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entry-Level Linux Admin & AWS Cloud Engineer</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Patrick Hogan - Linux Admin, Cloud Engineer, Golang Developer & GRC Specialist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        terminal: {
+                            bg: '#0d1117',
+                            surface: '#161b22',
+                            border: '#30363d',
+                            green: '#7c3aed',
+                            blue: '#3b82f6',
+                            orange: '#f59e0b',
+                            red: '#ef4444',
+                            text: '#f0f6fc',
+                            muted: '#8b949e'
+                        }
+                    },
+                    fontFamily: {
+                        'mono': ['JetBrains Mono', 'Consolas', 'Monaco', 'monospace'],
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .terminal-bg {
+            background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+        }
+        
+        .terminal-window {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+        }
+        
+        .terminal-header {
+            background: #21262d;
+            border-bottom: 1px solid #30363d;
+            padding: 12px 16px;
+            border-radius: 8px 8px 0 0;
+        }
+        
+        .terminal-dots {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .dot-red { background: #ff5f56; }
+        .dot-yellow { background: #ffbd2e; }
+        .dot-green { background: #27ca3f; }
+        
+        .prompt::before {
+            content: "$ ";
+            color: #7c3aed;
+            font-weight: 600;
+        }
+        
+        .cursor::after {
+            content: "_";
+            animation: blink 1s infinite;
+            color: #7c3aed;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        .typing-animation {
+            overflow: hidden;
+            border-right: 2px solid #7c3aed;
+            white-space: nowrap;
+            animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #7c3aed; }
+        }
+        
+        .command-output {
+            color: #8b949e;
+        }
+        
+        .success-text { color: #27ca3f; }
+        .warning-text { color: #ffbd2e; }
+        .error-text { color: #ff5f56; }
+        .info-text { color: #3b82f6; }
+        .primary-text { color: #7c3aed; }
+        
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            transition: all 0.3s ease;
+        }
+        
+        .glass-effect {
+            background: rgba(22, 27, 34, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(48, 54, 61, 0.5);
+        }
+        
+        .progress-bar {
+            background: linear-gradient(90deg, #7c3aed 0%, #3b82f6 100%);
+            height: 3px;
+            border-radius: 2px;
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <nav>
-            <h1>My Portfolio</h1>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#additional-projects">Additional Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section id="hero">
-        <img src="./assets/image1.png" alt="avatar">
-        <h2>Welcome to My Portfolio</h2>
-    </section>
-
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Hello! I'm Patrick, an enthusiastic entry-level Linux Administrator and Cloud Engineer. I recently completed training with NextWork and earned certifications from The Linux Foundation. 
-           I am passionate about managing robust IT infrastructures and developing scalable cloud solutions. My experience includes working with Linux systems, setting up and maintaining LAMP stacks, and leveraging AWS services to build and manage cloud-based solutions. 
-           I am particularly interested in optimizing system performance and enhancing security practices. I'm excited about opportunities to apply my skills in Linux system administration and cloud engineering to contribute to innovative and efficient IT solutions. 
-           I look forward to continuing my professional development and working on impactful projects.</p>
-    </section>
-
-    <section id="skills">
-        <h2>Skills and Abilities</h2>
-        <ul>
-            <li>Basic Linux command line knowledge</li>
-            <li>Familiarity with virtualization technologies</li>
-            <li>Basic networking concepts and protocols</li>
-            <li>Understanding of container technologies</li>
-            <li>Strong analytical and problem-solving abilities</li>
-            <li>Excellent communication and interpersonal skills</li>
-            <li>Attention to detail and accuracy</li>
-            <li>Ability to work under pressure and in high-stress environments</li>
-            <li>Team collaboration and leadership</li>
-            <li>Strong ethics and integrity</li>
-            <li>Electronics and Computer Troubleshooting</li>
-        </ul>
-    </section>
-
-    <section class="certs" id="skills">
-        <h2>Professional Certifications</h2>
-        <ul>
-            <li>
-                <img src="./assets/lfs101-introduction-to-linux.png" style="height: 150px;" alt="Linux">
-                <img src="./assets/lfc108-cybersecurity-essentials.png" style="height: 150px;" alt="lfc108-cybersecurity-essentials">
-                <img src="./assets/lfs151-introduction-to-cloud-infrastructure-technol.png" style="height: 150px;" alt="lfc108-cybersecurity-essentials">
-            </li>
-        </ul>
-    </section>
-
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>LAMP Stack Deployment</h3>
-            <p>This project involved setting up a LAMP (Linux, Apache, MySQL, PHP) stack to create a fully functional web server environment. The deployment includes configuring Apache for virtual hosting, securing MySQL databases, and optimizing PHP settings for performance.
-                <br><br>
-                <strong>Key Features:</strong>
-                <br><br>
-                Secure Configuration: Ensuring all components are securely configured to prevent unauthorized access and potential vulnerabilities.
-                <br><br>
-                Performance Tuning: Optimizing the server settings to enhance performance and handle high traffic loads efficiently.
-                <br><br>
-                Backup Solutions: Implementing backup strategies for databases and server files to ensure data integrity and recovery options.
-                <br><br>
-                <strong>Technologies Used:</strong>
-                <br><br>
-                Linux: Managing the server environment and performing system administration tasks.
-                <br><br>
-                Apache: Configuring and managing the web server.
-                <br><br>
-                MySQL: Handling database management and security.
-                <br><br>
-                PHP: Developing dynamic web content and server-side scripts.
-                <br><br>
-                <strong>Objective:</strong>
-                <br>
-                The goal of this project was to demonstrate the ability to deploy and manage a LAMP stack environment, focusing on security, performance, and reliability.
-                <br><br>
-                <a href="https://github.com/T3chfuzion/LAMP-Stack.git" target="_blank">Project Link</a>
-            </p>
+<body class="bg-terminal-bg text-terminal-text font-mono overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-effect">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-xl font-bold font-mono">
+                    <span class="text-terminal-green">user@portfolio</span><span class="text-terminal-muted">:</span><span class="text-terminal-blue">~</span><span class="text-terminal-muted">$</span>
+                </div>
+                <div class="hidden md:flex space-x-8 font-mono">
+                    <a href="#about" class="text-terminal-text hover:text-terminal-green transition-colors duration-300">./about</a>
+                    <a href="#skills" class="text-terminal-text hover:text-terminal-green transition-colors duration-300">./skills</a>
+                    <a href="#projects" class="text-terminal-text hover:text-terminal-green transition-colors duration-300">./projects</a>
+                    <a href="#contact" class="text-terminal-text hover:text-terminal-green transition-colors duration-300">./contact</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-terminal-green">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
         </div>
-        <div class="project">
-            <h3>AWS Cloud Projects</h3>
-            <p>This project involved designing and deploying a scalable cloud infrastructure using AWS services. It includes setting up EC2 instances, configuring S3 buckets, and implementing security groups and IAM roles to manage access and resources.
-                <br><br>
-                <strong>Key Features:</strong>
-                <br><br>
-                Scalable Architecture: Designing a cloud infrastructure that can scale based on demand, ensuring high availability and performance.
-                <br><br>
-                Cost Optimization: Implementing strategies to monitor and manage costs effectively.
-                <br><br>
-                Security Measures: Configuring security groups and IAM policies to control access and protect resources.
-                <br><br>
-                <strong>Technologies Used:</strong>
-                <br><br>
-                AWS EC2: Deploying and managing virtual servers in the cloud.
-                <br><br>
-                AWS S3: Storing and managing data in scalable object storage.
-                <br><br>
-                AWS IAM: Managing access and permissions for AWS resources.
-                <br><br>
-                <strong>Objective:</strong>
-                <br>
-                The objective of this project was to showcase the ability to design and implement a scalable and secure cloud infrastructure using AWS services.
-                <br><br>
-                <a href="https://github.com/T3chfuzion/AWSCloudProjects.git" target="_blank">Project Link</a>
-            </p>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-terminal-surface border-t border-terminal-border">
+            <div class="px-2 pt-2 pb-3 space-y-1 font-mono">
+                <a href="#about" class="block px-3 py-2 text-terminal-text hover:text-terminal-green">./about</a>
+                <a href="#skills" class="block px-3 py-2 text-terminal-text hover:text-terminal-green">./skills</a>
+                <a href="#projects" class="block px-3 py-2 text-terminal-text hover:text-terminal-green">./projects</a>
+                <a href="#contact" class="block px-3 py-2 text-terminal-text hover:text-terminal-green">./contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center justify-center px-4">
+        <div class="terminal-window max-w-4xl w-full">
+            <div class="terminal-header">
+                <div class="flex justify-between items-center">
+                    <div class="terminal-dots">
+                        <div class="dot dot-red"></div>
+                        <div class="dot dot-yellow"></div>
+                        <div class="dot dot-green"></div>
+                    </div>
+                    <div class="text-sm text-terminal-muted font-mono">patrick@hogan-portfolio ~ zsh</div>
+                </div>
+            </div>
+            <div class="p-8 space-y-4 font-mono">
+                <div class="flex items-center space-x-4 mb-8">
+                    <img src="./assets/image1.png" alt="Patrick Hogan" class="w-20 h-20 rounded-full border-2 border-terminal-border object-cover">
+                    <div>
+                        <div class="text-2xl font-bold text-terminal-text">Patrick Hogan</div>
+                        <div class="text-terminal-muted">Linux Admin | Cloud Engineer | Golang Developer | GRC Specialist</div>
+                    </div>
+                </div>
+                
+                <div class="space-y-2">
+                    <div class="prompt">whoami</div>
+                    <div class="command-output pl-4">patrick-hogan</div>
+                    
+                    <div class="prompt">cat /etc/roles</div>
+                    <div class="command-output pl-4">
+                        <div class="text-terminal-green">✓</div> Linux Administrator
+                        <div class="text-terminal-blue">✓</div> Cloud Engineer (Google Cloud Platform)
+                        <div class="text-terminal-orange">✓</div> Golang Developer
+                        <div class="text-terminal-red">✓</div> GRC Specialist
+                    </div>
+                    
+                    <div class="prompt">ls -la ~/current_status</div>
+                    <div class="command-output pl-4">
+                        drwxr-xr-x  2 patrick  staff   64B Dec  1 2024 actively-seeking-opportunities/
+                        -rw-r--r--  1 patrick  staff  2.1K Dec  1 2024 portfolio.md
+                        -rwxr-xr-x  1 patrick  staff  4.2K Dec  1 2024 deploy-awesome-solutions.sh
+                    </div>
+                    
+                    <div class="prompt cursor">ready for next challenge</div>
+                </div>
+                
+                <div class="flex space-x-4 mt-8">
+                    <a href="#about" class="bg-terminal-green text-terminal-bg px-6 py-2 rounded font-medium hover-lift transition-all duration-300">
+                        ./explore_profile
+                    </a>
+                    <a href="#contact" class="border border-terminal-green text-terminal-green px-6 py-2 rounded font-medium hover-lift transition-all duration-300">
+                        ./send_message
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="additional-projects">
-        <h2>Additional Projects</h2>
-        <div class="project">
-            <h3>Personal Linux Server Setup</h3>
-            <p>Set up a personal Linux server using Ubuntu to host a web application. Configured basic services like SSH, Apache, and MySQL. Gained hands-on experience with Linux command line and file system management.</p>
-        </div>
-        <div class="project">
-            <h3>Virtualization and Cloud Computing Lab</h3>
-            <p>Created virtual machines using VirtualBox for testing purposes. Explored cloud services by setting up and managing virtual instances on AWS. Technologies included Proxmox, Ubuntu OS, Ubuntu Server, and Parrot OS.</p>
-        </div>
-        <div class="project">
-            <h3>Networking and Security Basics</h3>
-            <p>Studied basic networking concepts including TCP/IP, DNS, and DHCP. Practiced setting up and configuring a home network with routers and switches. Gained an understanding of basic security practices and firewall configurations.</p>
-        </div>
-        <div class="project">
-            <h3>Basic Website Development</h3>
-            <p>Utilized HTML, CSS, and JavaScript to create the front-end of websites. Developed user-friendly and responsive web interfaces to enhance user experiences.</p>
+    <!-- About Section -->
+    <section id="about" class="py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <div class="flex justify-between items-center">
+                        <div class="terminal-dots">
+                            <div class="dot dot-red"></div>
+                            <div class="dot dot-yellow"></div>
+                            <div class="dot dot-green"></div>
+                        </div>
+                        <div class="text-sm text-terminal-muted font-mono">about.md - patrick's profile</div>
+                    </div>
+                </div>
+                <div class="p-8 font-mono">
+                    <div class="space-y-4">
+                        <div class="prompt">cat about_patrick.md</div>
+                        <div class="command-output pl-4 space-y-4">
+                            <div class="text-lg font-semibold text-terminal-text"># Patrick Hogan - Technical Profile</div>
+                            
+                            <div>
+                                <div class="text-terminal-green font-medium">## Overview</div>
+                                <p class="text-terminal-muted mt-2 leading-relaxed">
+                                    Hi, I'm Patrick — a dedicated Linux Administrator, Cloud Engineer, and Golang Developer with a strong foundation in Governance, Risk, and Compliance (GRC). I bring hands-on experience managing secure, scalable IT infrastructures and ensuring alignment with industry standards and regulatory requirements.
+                                </p>
+                            </div>
+                            
+                            <div>
+                                <div class="text-terminal-blue font-medium">## Technical Expertise</div>
+                                <p class="text-terminal-muted mt-2 leading-relaxed">
+                                    I specialize in Linux system administration, cloud architecture (with a focus on Google Cloud), and full-stack development using technologies like Go and React. As a proficient Golang developer, I build high-performance, concurrent applications that leverage Go's strengths in system programming and microservices architecture.
+                                </p>
+                            </div>
+                            
+                            <div>
+                                <div class="text-terminal-orange font-medium">## Current Projects</div>
+                                <p class="text-terminal-muted mt-2 leading-relaxed">
+                                    Currently, I'm working on projects that include a secure cloud storage platform and a real-time service monitoring solution — both designed to meet modern demands for reliability, transparency, and regulatory alignment.
+                                </p>
+                            </div>
+                            
+                            <div>
+                                <div class="text-terminal-red font-medium">## Mission</div>
+                                <p class="text-terminal-muted mt-2 leading-relaxed">
+                                    My passion lies in optimizing infrastructure performance, enhancing security postures, and implementing effective risk management strategies. I'm eager to contribute to forward-thinking teams and projects where I can merge deep technical expertise with GRC-focused innovation.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="prompt cursor mt-6">end of file</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="contact">
-        <h2>Contact Information</h2>
-        <form id="contact-form">
-            <p>Email: <a href="mailto:techfuzion86@gmail.com">techfuzion86@gmail.com</a></p>
-        </form>
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <div class="flex justify-between items-center">
+                        <div class="terminal-dots">
+                            <div class="dot dot-red"></div>
+                            <div class="dot dot-yellow"></div>
+                            <div class="dot dot-green"></div>
+                        </div>
+                        <div class="text-sm text-terminal-muted font-mono">skills.sh - capability assessment</div>
+                    </div>
+                </div>
+                <div class="p-8 font-mono">
+                    <div class="space-y-6">
+                        <div class="prompt">./assess_capabilities.sh --verbose</div>
+                        <div class="command-output pl-4">
+                            <div class="text-terminal-green">Running capability assessment...</div>
+                            <div class="text-terminal-muted">Scanning installed packages and experience levels...</div>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+                            <div class="terminal-window hover-lift transition-all duration-300">
+                                <div class="p-4">
+                                    <div class="text-terminal-green text-lg mb-2">💻 linux_administration</div>
+                                    <div class="progress-bar w-full mb-2"></div>
+                                    <div class="text-sm text-terminal-muted">Advanced system administration and command line expertise</div>
+                                </div>
+                            </div>
+                            
+                            <div class="terminal-window hover-lift transition-all duration-300">
+                                <div class="p-4">
+                                    <div class="text-terminal-blue text-lg mb-2">☁️ cloud_engineering</div>
+                                    <div class="progress-bar w-5/6 mb-2"></div>
+                                    <div class="text-sm text-terminal-muted">Google Cloud Platform architecture and scalable solutions</div>
+                                </div>
+                            </div>
+                            
+                            <div class="terminal-window hover-lift transition-all duration-300">
+                                <div class="p-4">
+                                    <div class="text-terminal-orange text-lg mb-2">🐹 golang_development</div>
+                                    <div class="progress-bar w-5/6 mb-2"></div>
+                                    <div class="text-sm text-terminal-muted">High-performance backend services and microservices</div>
+                                </div>
+                            </div>
+                            
+                            <div class="terminal-window hover-lift transition-all duration-300">
+                                <div class="p-4">
+                                    <div class="text-terminal-red text-lg mb-2">🛡️ grc_compliance</div>
+                                    <div class="progress-bar w-4/5 mb-2"></div>
+                                    <div class="text-sm text-terminal-muted">Governance, Risk, and Compliance frameworks</div>
+                                </div>
+                            </div>
+                            
+                            <div class="terminal-window hover-lift transition-all duration-300">
+                                <div class="p-4">
+                                    <div class="text-terminal-green text-lg mb-2">🚀 fullstack_development</div>
+                                    <div class="progress-bar w-4/5 mb-2"></div>
+                                    <div class="text-sm text-terminal-muted">React frontend and modern web architecture</div>
+                                </div>
+                            </div>
+                            
+                            <div class="terminal-window hover-lift transition-all duration-300">
+                                <div class="p-4">
+                                    <div class="text-terminal-blue text-lg mb-2">🌐 virtualization</div>
+                                    <div class="progress-bar w-3/4 mb-2"></div>
+                                    <div class="text-sm text-terminal-muted">Container orchestration and VM management</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="command-output pl-4 mt-6">
+                            <div class="text-terminal-green">Assessment complete ✓</div>
+                            <div class="text-terminal-muted">All systems operational and ready for deployment</div>
+                        </div>
+                        <div class="prompt cursor">capabilities verified</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <footer>
-        <p>&copy; 2024 Patrick Hogan</p>
+    <!-- Certifications Section -->
+    <section class="py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <div class="flex justify-between items-center">
+                        <div class="terminal-dots">
+                            <div class="dot dot-red"></div>
+                            <div class="dot dot-yellow"></div>
+                            <div class="dot dot-green"></div>
+                        </div>
+                        <div class="text-sm text-terminal-muted font-mono">certifications.log</div>
+                    </div>
+                </div>
+                <div class="p-8 font-mono">
+                    <div class="space-y-4">
+                        <div class="prompt">ls -la ~/certifications/</div>
+                        <div class="command-output pl-4">
+                            <div class="text-terminal-muted">total 3</div>
+                            <div class="flex justify-center space-x-8 mt-8">
+                                <div class="terminal-window hover-lift transition-all duration-300 p-4">
+                                    <img src="./assets/lfs101-introduction-to-linux.png" alt="Linux Introduction" class="h-24 w-auto mx-auto">
+                                    <div class="text-center mt-2 text-sm text-terminal-green">lfs101-linux.cert</div>
+                                </div>
+                                <div class="terminal-window hover-lift transition-all duration-300 p-4">
+                                    <img src="./assets/lfc108-cybersecurity-essentials.png" alt="Cybersecurity Essentials" class="h-24 w-auto mx-auto">
+                                    <div class="text-center mt-2 text-sm text-terminal-blue">lfc108-security.cert</div>
+                                </div>
+                                <div class="terminal-window hover-lift transition-all duration-300 p-4">
+                                    <img src="./assets/lfs151-introduction-to-cloud-infrastructure-technol.png" alt="Cloud Infrastructure" class="h-24 w-auto mx-auto">
+                                    <div class="text-center mt-2 text-sm text-terminal-orange">lfs151-cloud.cert</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="prompt cursor mt-6">credentials verified</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <div class="flex justify-between items-center">
+                        <div class="terminal-dots">
+                            <div class="dot dot-red"></div>
+                            <div class="dot dot-yellow"></div>
+                            <div class="dot dot-green"></div>
+                        </div>
+                        <div class="text-sm text-terminal-muted font-mono">projects/ - active repositories</div>
+                    </div>
+                </div>
+                <div class="p-8 font-mono">
+                    <div class="space-y-6">
+                        <div class="prompt">git log --oneline --graph</div>
+                        
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <!-- VREXIS Cloud Project -->
+                            <div class="terminal-window hover-lift transition-all duration-300">
+                                <div class="p-6">
+                                    <div class="text-terminal-green text-xl mb-2">📦 vrexis-cloud/</div>
+                                    <div class="text-terminal-muted text-sm mb-4">Modern cloud storage platform with S3-compatible APIs</div>
+                                    
+                                    <div class="space-y-2 text-sm">
+                                        <div><span class="text-terminal-green">language:</span> <span class="text-terminal-muted">Go, React</span></div>
+                                        <div><span class="text-terminal-blue">database:</span> <span class="text-terminal-muted">PostgreSQL</span></div>
+                                        <div><span class="text-terminal-orange">features:</span> <span class="text-terminal-muted">JWT auth, S3 API, real-time dashboard</span></div>
+                                    </div>
+                                    
+                                    <div class="mt-4">
+                                        <a href="https://github.com/T3chfuzion/vrexis-cloud" target="_blank" class="text-terminal-green hover:underline">
+                                            → git clone repository
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Vrexis Insights Project -->
+                            <div class="terminal-window hover-lift transition-all duration-300">
+                                <div class="p-6">
+                                    <div class="text-terminal-blue text-xl mb-2">📊 vrexis-insights/</div>
+                                    <div class="text-terminal-muted text-sm mb-4">Enterprise monitoring platform with real-time dashboards</div>
+                                    
+                                    <div class="space-y-2 text-sm">
+                                        <div><span class="text-terminal-green">language:</span> <span class="text-terminal-muted">Go, React</span></div>
+                                        <div><span class="text-terminal-blue">protocol:</span> <span class="text-terminal-muted">WebSocket, HTTP/HTTPS</span></div>
+                                        <div><span class="text-terminal-orange">features:</span> <span class="text-terminal-muted">Live monitoring, ICMP ping, security</span></div>
+                                    </div>
+                                    
+                                    <div class="mt-4">
+                                        <a href="https://github.com/T3chfuzion/vrexis-insights" target="_blank" class="text-terminal-blue hover:underline">
+                                            → git clone repository
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <div class="text-terminal-muted mb-4">Additional repositories:</div>
+                            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                                <div class="terminal-window p-4 hover-lift transition-all duration-300">
+                                    <div class="text-terminal-orange">🔧 lamp-stack/</div>
+                                    <div class="text-xs text-terminal-muted mt-1">Complete LAMP deployment</div>
+                                </div>
+                                <div class="terminal-window p-4 hover-lift transition-all duration-300">
+                                    <div class="text-terminal-green">☁️ gcp-infrastructure/</div>
+                                    <div class="text-xs text-terminal-muted mt-1">Google Cloud setup</div>
+                                </div>
+                                <div class="terminal-window p-4 hover-lift transition-all duration-300">
+                                    <div class="text-terminal-red">🛡️ compliance-automation/</div>
+                                    <div class="text-xs text-terminal-muted mt-1">GRC framework tools</div>
+                                </div>
+                                <div class="terminal-window p-4 hover-lift transition-all duration-300">
+                                    <div class="text-terminal-blue">🖥️ vm-management/</div>
+                                    <div class="text-xs text-terminal-muted mt-1">Proxmox enterprise setup</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="prompt cursor">repositories listed</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <div class="flex justify-between items-center">
+                        <div class="terminal-dots">
+                            <div class="dot dot-red"></div>
+                            <div class="dot dot-yellow"></div>
+                            <div class="dot dot-green"></div>
+                        </div>
+                        <div class="text-sm text-terminal-muted font-mono">contact.sh - communication protocol</div>
+                    </div>
+                </div>
+                <div class="p-8 font-mono">
+                    <div class="space-y-4">
+                        <div class="prompt">./initiate_contact.sh</div>
+                        <div class="command-output pl-4 space-y-2">
+                            <div class="text-terminal-green">Initializing secure communication channel...</div>
+                            <div class="text-terminal-blue">Establishing connection parameters...</div>
+                            <div class="text-terminal-orange">Ready to receive transmission</div>
+                        </div>
+                        
+                        <div class="text-center mt-8">
+                            <div class="text-terminal-muted mb-4">Available communication methods:</div>
+                            <a href="mailto:techfuzion86@gmail.com" class="inline-flex items-center bg-terminal-green text-terminal-bg px-8 py-3 rounded font-medium hover-lift transition-all duration-300">
+                                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                                → send_email techfuzion86@gmail.com
+                            </a>
+                        </div>
+                        
+                        <div class="prompt cursor mt-6">awaiting message</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-terminal-border">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center font-mono">
+            <div class="text-terminal-muted">
+                <span class="text-terminal-green">©</span> 2024 Patrick Hogan <span class="text-terminal-muted">|</span> All rights reserved
+            </div>
+        </div>
     </footer>
 
-    <script src="scripts.js"></script>
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.terminal-window').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
